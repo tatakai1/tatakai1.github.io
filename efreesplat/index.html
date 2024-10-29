@@ -194,64 +194,6 @@
 </section>
 
 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -259,7 +201,24 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
+          <p>We propose eFreeSplat, an efficient feed-forward 3DGS-based model for generalizable
+            novel view synthesis that operates independently of epipolar line constraints.</p>
+          
+          <p>To enhance multiview feature extraction with 3D perception, we employ a selfsupervised
+            Vision Transformer (ViT) with cross-view completion pre-training on
+            large-scale datasets. Additionally, we introduce an Iterative Cross-view Gaussians
+            Alignment method to ensure consistent depth scales across different views. Our
+            eFreeSplat represents an innovative approach for generalizable novel view synthesis.
+            Different from the existing pure geometry-free methods, eFreeSplat focuses
+            more on achieving epipolar-free feature matching and encoding by providing 3D
+            priors through cross-view pretraining.</p> 
+            
+          <p>We evaluate eFreeSplat on wide-baseline
+          novel view synthesis tasks using the RealEstate10K and ACID datasets. Extensive
+          experiments demonstrate that eFreeSplat surpasses state-of-the-art baselines that
+          rely on epipolar priors, achieving superior geometry reconstruction and novel view
+          synthesis quality.</p>
+          <!-- <p>
             We present the first method capable of photorealistically reconstructing a non-rigidly
             deforming scene using photos/videos captured casually from mobile phones.
           </p>
@@ -285,165 +244,146 @@
             images of the same pose at different viewpoints. We show that our method faithfully
             reconstructs non-rigidly deforming scenes and reproduces unseen views with high
             fidelity.
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Overview</h2>
+
+          <img src="./static/images/pipeline.jpg" class="center">
+          <figcaption class="has-text-justified"><b>Overview of eFreeSplat.</b> (a) Epipolar-free Cross-view Mutual Perception leverages selfsupervised
+            cross-view completion pre-training to extract robust 3D priors. The ViT with
+            shared weights processes the reference images, followed by a cross-attention decoder to generate
+            multiview feature maps, forming 3D perception without epipolar priors. (b) Iterative Cross-view
+            Gaussians Alignment module iteratively refines Gaussian attributes through a 2D U-Net. The process
+            involves warped features to align corresponding features and depths, ensuring consistent depth
+            scales across different views. (c) The final step involves employing rasterization-based volume
+            rendering to generate high-quality geometry and realistic novel view images.</figcaption>
+
         </div>
       </div>
+
     </div>
-    <!--/ Paper video. -->
+  </section>
+
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Comparisons with the State-of-the-art</h2>
+
+        <div class="content has-text-justified">
+          <p>We present qualitative comparisons with the following state-of-the-art models:</p>
+          <ul>
+            <li><a href="https://davidcharatan.com/pixelsplat/">pixelSplat</a>: The latest feed-forward 3D Gaussians model
+              that utilies data-driven regression architecture to predict Gaussian centers, leading to 
+              poor geometry reconstruction and limited ability of cross-dataset generalization.</li>
+            <li><a href="https://haofeixu.github.io/murf/">MuRF</a>: The latest feed-forward NeRF model that leverages 
+              3D volume and (2+1)D CNN, which is expensive to train and renders comparably slowly.</li>
+          </ul>
+        </div>
+
+        <img src="./static/images/sota_comparisons.png" class="center" alt="comparison on Real Estate 10k and ACID dataset">
+        <div class="content has-text-centered">
+          <video id="replay-video" autoplay="" controls="" muted="" preload="" playsinline="" loop="" width="100%">
+            <source src="static/videos/sota_comparisons.mp4" type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
 
-<section class="section">
+<section class="section" style="padding-top: 0;">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered">Comparisons of Geometry Reconstruction</h2>
 
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
+        <div class="content has-text-justified">
+          <p>Our MVSplat produces significantly higher-quality 3D Gaussian primitives than the latest state-of-the-art
+        pixelSplat. The readers are invited to view the corresponding ".ply" files of the 3D Gaussians exported from
+        both models provided at <b><a href="https://drive.google.com/drive/folders/1nBpUQnBvAIL7oLODElhIiLkW9x5gAuWs" target="_blank">HERE</a></b>.
+        We recommend viewing them with online viewers, <i>e.g.</i>,
+        <a href="https://projects.markkellogg.org/threejs/demo_gaussian_splats_3d.php?art=1&amp;cu=0,0,1&amp;cp=0,1,0&amp;cla=1,0,0" target="_blank">3D Gaussian Splatting with Three.js</a>
+        (camera up should be set to "0,0,1").</p>
         </div>
-      </div>
-      <!--/ Visual Effects. -->
 
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
+        <img src="./static/images/point_clouds.png" class="center" alt="point clouds and depth maps">
       </div>
     </div>
-    <!--/ Matting. -->
 
-    <!-- Animation. -->
+  </div>
+</section>
+
+
+
+<section class="section" style="padding-top: 0;">
+  <div class="container is-max-desktop">
+
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
+        <h2 class="title is-3 has-text-centered">Comparisons of Cross-dataset Generalization</h2>
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
+          <p>Our MVSplat is inherently superior in generalizing to <em>out-of-distribution</em> novel scenes, primarily due to the fact that the
+      cost volume captures the <em>relative similarity</em> between features, which remains <em>invariant</em> compared to the absolute scale of
+      features. Here, we present cross-dataset generalization by training models solely on RealEstate10K (indoor scenes), and directly 
+      test them on DTU (object-centric scenes) and ACID (outdoor scenes).</p>
         </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
 
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
+        <img src="./static/images/re10k_generalization.png" class="center" alt="trained on RealEstate10K, and tested on DTU and ACID">
         <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
+          <video id="replay-video" autoplay="" controls="" muted="" preload="" playsinline="" loop="" width="100%">
+            <source src="static/videos/re10k_generalization.mp4" type="video/mp4">
           </video>
         </div>
-        <!--/ Re-rendering. -->
 
       </div>
     </div>
-    <!--/ Animation. -->
+
+  </div>
+</section>
 
 
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
 
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
+<section class="section" id="Acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">Acknowledgements</h2>
+    This work was supported by the National Natural Science Foundation of China (62293554, 62206249,
+U2336212), "Leading Goose" R&D Program of Zhejiang (No. 2024C01161), and Young Elite
+Scientists Sponsorship Program by CAST (2023QNRC001).
   </div>
 </section>
 
 
 <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title" style="margin-top: -60px">BibTeX</h2>
+    <pre><code>@article{chen2024mvsplat,
+    title   = {Epipolar-Free 3D Gaussian Splatting for Generalizable Novel View Synthesis},
+    author  = {Chen, Yuedong and Xu, Haofei and Zheng, Chuanxia and Zhuang, Bohan and Pollefeys, Marc and Geiger, Andreas and Cham, Tat-Jen and Cai, Jianfei},
+    journal = {arXiv preprint arXiv:2403.14627},
+    year    = {2024},
+}</code></pre>
+
+  </div>
+</section>
+
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{park2021nerfies,
@@ -453,10 +393,27 @@
   year      = {2021},
 }</code></pre>
   </div>
-</section>
+</section> -->
 
 
 <footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            Template was borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+          under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <!-- <p>Please contact <a href="https://donydchen.github.io/">Yuedong Chen</a> for feedback and questions.</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
@@ -486,7 +443,7 @@
       </div>
     </div>
   </div>
-</footer>
+</footer> -->
 
 </body>
 </html>
