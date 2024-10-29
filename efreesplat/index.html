@@ -122,7 +122,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="https://tatakai1.github.io/efreesplat/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -131,7 +131,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href="https://tatakai1.github.io/efreesplat/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -141,7 +141,7 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                <a href="https://tatakai1.github.io/efreesplat/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -177,7 +177,7 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
@@ -189,6 +189,75 @@
         free-viewpoint
         portraits.
       </h2>
+    </div>
+  </div>
+</section> -->
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-5f798a3ff9e68036_frame_27_129">
+          <video poster="" id="5f798a3ff9e68036_frame_27_129" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/5f798a3ff9e68036_frame_27_129.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-44c16554a21aa6af_frame_52_174">
+          <video poster="" id="44c16554a21aa6af_frame_52_174" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/44c16554a21aa6af_frame_52_174.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-3628ec0337eae7be_frame_141_260">
+          <video poster="" id="3628ec0337eae7be_frame_141_260" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/3628ec0337eae7be_frame_141_260.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-63d81fedb5c9b7f2_frame_27_94">
+          <video poster="" id="63d81fedb5c9b7f2_frame_27_94" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/63d81fedb5c9b7f2_frame_27_94.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-76f2d6981e00d952_frame_98_178">
+          <video poster="" id="76f2d6981e00d952_frame_98_178" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/76f2d6981e00d952_frame_98_178.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-271bf9149d140dc4_frame_100_227">
+          <video poster="" id="271bf9149d140dc4_frame_100_227" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/271bf9149d140dc4_frame_100_227.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-3232f7457b27dbbc_frame_16_85">
+          <video poster="" id="3232f7457b27dbbc_frame_16_85" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/3232f7457b27dbbc_frame_16_85.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-2c55c5a96b50ab36_frame_31_92">
+          <video poster="" id="2c55c5a96b50ab36_frame_31_92" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/2c55c5a96b50ab36_frame_31_92.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-4422b38e60e3bc2f_frame_142_207">
+          <video poster="" id="4422b38e60e3bc2f_frame_142_207" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/4422b38e60e3bc2f_frame_142_207.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-075654f497170f90_frame_171_277">
+          <video poster="" id="075654f497170f90_frame_171_277" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/075654f497170f90_frame_171_277.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -282,22 +351,15 @@
         <h2 class="title is-3 has-text-centered">Comparisons with the State-of-the-art</h2>
 
         <div class="content has-text-justified">
-          <p>We present qualitative comparisons with the following state-of-the-art models:</p>
-          <ul>
-            <li><a href="https://davidcharatan.com/pixelsplat/">pixelSplat</a>: The latest feed-forward 3D Gaussians model
-              that utilies data-driven regression architecture to predict Gaussian centers, leading to 
-              poor geometry reconstruction and limited ability of cross-dataset generalization.</li>
-            <li><a href="https://haofeixu.github.io/murf/">MuRF</a>: The latest feed-forward NeRF model that leverages 
-              3D volume and (2+1)D CNN, which is expensive to train and renders comparably slowly.</li>
-          </ul>
+          <p>Qualitative comparisons with the generalizable 3DGS-based state-of-the-art models: <a href="https://davidcharatan.com/pixelsplat/">pixelSplat</a> and <a href="https://donydchen.github.io/mvsplat/">MVSplat.</a></p>
         </div>
 
-        <img src="./static/images/sota_comparisons.png" class="center" alt="comparison on Real Estate 10k and ACID dataset">
-        <div class="content has-text-centered">
+        <img src="./static/images/sota_comparisons.jpg" class="center" alt="comparison on Real Estate 10k and ACID dataset">
+        <!-- <div class="content has-text-centered">
           <video id="replay-video" autoplay="" controls="" muted="" preload="" playsinline="" loop="" width="100%">
             <source src="static/videos/sota_comparisons.mp4" type="video/mp4">
           </video>
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -314,15 +376,12 @@
         <h2 class="title is-3 has-text-centered">Comparisons of Geometry Reconstruction</h2>
 
         <div class="content has-text-justified">
-          <p>Our MVSplat produces significantly higher-quality 3D Gaussian primitives than the latest state-of-the-art
-        pixelSplat. The readers are invited to view the corresponding ".ply" files of the 3D Gaussians exported from
-        both models provided at <b><a href="https://drive.google.com/drive/folders/1nBpUQnBvAIL7oLODElhIiLkW9x5gAuWs" target="_blank">HERE</a></b>.
-        We recommend viewing them with online viewers, <i>e.g.</i>,
-        <a href="https://projects.markkellogg.org/threejs/demo_gaussian_splats_3d.php?art=1&amp;cu=0,0,1&amp;cp=0,1,0&amp;cla=1,0,0" target="_blank">3D Gaussian Splatting with Three.js</a>
-        (camera up should be set to "0,0,1").</p>
+          <p>Comparison results about 3D Gaussians (top) and predicted depth maps of the reference
+            viewpoints (bottom). Compared to SOTA 3DGS-based methods, our method achieves higher
+            quality in 3D Gaussian Splatting and produces smoother depth maps.</p>
         </div>
 
-        <img src="./static/images/point_clouds.png" class="center" alt="point clouds and depth maps">
+        <img src="./static/images/point_clouds.jpg" class="center" alt="point clouds and depth maps">
       </div>
     </div>
 
@@ -336,21 +395,23 @@
 
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered">Comparisons of Cross-dataset Generalization</h2>
+        <h2 class="title is-3 has-text-centered">Performance with Low-overlapped Observations.</h2>
 
         <div class="content has-text-justified">
-          <p>Our MVSplat is inherently superior in generalizing to <em>out-of-distribution</em> novel scenes, primarily due to the fact that the
-      cost volume captures the <em>relative similarity</em> between features, which remains <em>invariant</em> compared to the absolute scale of
-      features. Here, we present cross-dataset generalization by training models solely on RealEstate10K (indoor scenes), and directly 
-      test them on DTU (object-centric scenes) and ACID (outdoor scenes).</p>
+          <p>Our method reconstructs more reliable results
+            than MVSplat when the reference views overlap is
+            low. In the histogram, the blue bars represent the
+            frequency at which our method exceeds MVSplat in
+            rendering quality under the current overlap conditions,
+            while the orange bars indicate the opposite.</p>
         </div>
 
-        <img src="./static/images/re10k_generalization.png" class="center" alt="trained on RealEstate10K, and tested on DTU and ACID">
-        <div class="content has-text-centered">
+        <img src="./static/images/re10k_overlap_fre_compare.png" class="center" alt="performance with Low-overlapped observations" style="width: 80%; max-width: 500px; height: auto; display: block; margin: 0 auto;">
+        <!-- <div class="content has-text-centered">
           <video id="replay-video" autoplay="" controls="" muted="" preload="" playsinline="" loop="" width="100%">
             <source src="static/videos/re10k_generalization.mp4" type="video/mp4">
           </video>
-        </div>
+        </div> -->
 
       </div>
     </div>
@@ -370,7 +431,7 @@ Scientists Sponsorship Program by CAST (2023QNRC001).
 </section>
 
 
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title" style="margin-top: -60px">BibTeX</h2>
     <pre><code>@article{chen2024mvsplat,
@@ -381,7 +442,7 @@ Scientists Sponsorship Program by CAST (2023QNRC001).
 }</code></pre>
 
   </div>
-</section>
+</section> -->
 
 <!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
